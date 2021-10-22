@@ -6,7 +6,7 @@ import Wrapper from './Wrapper';
 function App() {
   return (
     
-    <Wrapper>
+    <Wrapper children ="">
     <header className="header">asdasd</header>
     <div></div>
     <div>dasd</div>
