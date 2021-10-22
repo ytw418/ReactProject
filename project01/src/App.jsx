@@ -10,7 +10,8 @@ function App() {
     <header className="header">asdasd</header>
     <div></div>
     <div>dasd</div>
-    <Hello name="react" color="red"></Hello>
+    <Hello name="react" color="red" isSpecial="true"></Hello>
+    <Hello name="ddd" color="blue" isSpecial={false} ></Hello>
     </Wrapper>
 
   );
