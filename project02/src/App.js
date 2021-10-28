@@ -14,7 +14,7 @@ function App() {
 <Counter></Counter>
 <InputSample></InputSample>
 <Inputs></Inputs>
-<InputSample_Ex>asd</InputSample_Ex>
+<InputSample_Ex></InputSample_Ex>
 </>
   );
 }

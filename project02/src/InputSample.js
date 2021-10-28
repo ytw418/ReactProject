@@ -16,7 +16,7 @@ function InputSample() {
         <div>
             <input onChange={onChange} value={text}></input>
             <button onClick={onReset}>초기화</button>
-            <div>값 : {text}</div>
+            <div>값 :랜더링 테스트 {text}</div>
 
         </div>
     );
