@@ -1,4 +1,4 @@
-import React ,{useState} from 'react';
+import React ,{useState,useRef} from 'react';
 
 function Inputs() {
 
@@ -7,6 +7,8 @@ function Inputs() {
         nickname:'',
 
     });
+
+    const nameInput = useRef();
 
     const { num, nickname } = text; // 비구조화 할당을 통해 값 추출
     console.log({num})
@@ -28,11 +30,12 @@ const reset = () => {
         num: '',
         nickname: '',
     });
+    nameInput.current.focus();
 };
 
     return(
         <>
-        <input  onChange={change} name="num" value={num}></input>
+        <input  onChange={change} name="num" value={num} ref={nameInput}></input>
         <input  onChange={change} name="nickname" value={nickname}></input>
         <button onClick={reset}>초기화</button>
 
