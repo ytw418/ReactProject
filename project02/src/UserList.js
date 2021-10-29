@@ -14,7 +14,7 @@ export default function UserList() {
 
     const user = [
         {
-            id: 1,
+            id: 1,   
             username: 'one',
             email: 'one@naver.com,'
         },
