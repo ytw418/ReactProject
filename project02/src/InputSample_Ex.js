@@ -1,15 +1,39 @@
 //rfce
+import React, { useState } from 'react';
 
-import React from 'react'
 
 function InputSample_Ex() {
+
+    const [text,setText] = useState({
+        name:'',
+        name2:'',
+    });
+
+    const { name,name2} = text;
+
+    const change = (e) =>{
+        const {value,name} = e.target;
+
+        setText({
+            ...text,
+            [name]: value,
+        });
+        
+    };
+
+    const reset = () =>{
+        setText('');
+    };
+
     return (
         <div>
-            <input ></input>
-            <button>초기화</button>
-            <p>값 : {} </p>
+            <input onChange={change} value={name} name='name'></input>
+            <input onChange={change} value={text.name2} name='name2'></input>
+            <button onClick={reset}>초기화</button>
+            <p>값 : {name} </p>
+            <p>값 : {name2} </p>
         </div>
-    )
+    );
 }
 
-export default InputSample_Ex
+export default InputSample_Ex;

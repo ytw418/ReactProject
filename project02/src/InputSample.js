@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function InputSample() {
+function InputSample({안녕}) {
 
     const [text, setText] = useState('');
 
@@ -15,7 +15,7 @@ function InputSample() {
     return(
         <div>
             <input onChange={onChange} value={text}></input>
-            <button onClick={onReset}>초기화</button>
+            <button onClick={onReset}>{안녕}</button>
             <div>값 : {text}</div>
 
         </div>

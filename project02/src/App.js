@@ -3,6 +3,9 @@ import Counter from './Counter';
 import InputSample from './InputSample';
 import Inputs from './Inputs';
 import InputSample_Ex from './InputSample_Ex';
+import UserList from './UserList';
+import Ex from './Ex';
+
 
 
 //rfce
@@ -12,9 +15,11 @@ function App() {
   return (
     <>
 <Counter></Counter>
-<InputSample></InputSample>
+<InputSample 안녕="버튼버튼"></InputSample>
 <Inputs></Inputs>
 <InputSample_Ex>asd</InputSample_Ex>
+<UserList></UserList>
+<Ex></Ex>
 </>
   );
 }
