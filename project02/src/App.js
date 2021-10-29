@@ -17,15 +17,11 @@ function App() {
 <Counter></Counter>
 <InputSample 안녕="버튼버튼"></InputSample>
 <Inputs></Inputs>
-<<<<<<< HEAD
-<InputSample_Ex>asd</InputSample_Ex>
+<InputSample_Ex></InputSample_Ex>
 <UserList></UserList>
 <Ex></Ex>
-=======
-<InputSample_Ex></InputSample_Ex>
->>>>>>> 6acd8f5e7239d0bcc2c7c931c9a445b1d458a8be
 </>
-  );
+  )
 }
 
 export default App;
