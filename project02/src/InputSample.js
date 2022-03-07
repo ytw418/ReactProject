@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function InputSample({안녕}) {
+function InputSample({ASD}) {
 
     const [text, setText] = useState('');
 
@@ -16,7 +16,7 @@ function InputSample({안녕}) {
         <div>
             <input onChange={onChange} value={text}></input>
 
-            <button onClick={onReset}>{안녕}</button>
+            <button onClick={onReset}>{ASD}</button>
             <div>값 : {text}</div>
 
             <button onClick={onReset}>초기화</button>

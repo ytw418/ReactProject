@@ -11,7 +11,7 @@ function User({ user,onRemove }) {
 
 // 컴포넌트 두개 생성가능
 
-export default function UserList({users}) {
+export default function UserList({users,onRemove}) {
 
 
     return (
@@ -19,9 +19,6 @@ export default function UserList({users}) {
             {users.map(u => (
                 <User user={u} key={u.id} onRemove={onRemove} />
             ))}
-
-
-
         </div>
     )
 }

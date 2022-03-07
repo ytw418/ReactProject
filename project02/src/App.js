@@ -8,16 +8,10 @@ import UserList from './UserList';
 import CreateUser from './CreateUser';
 
 
-
-
-
 //rfce
 
 
 function App() {
-
-
-
 
 
   const [inputs, setInputs] = useState({
@@ -76,8 +70,14 @@ function App() {
     nextId.current += 1;
   };
 
+  const onRemove = id => {
+    // user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
+    // = user.id 가 id 인 것을 제거함
+    setUsers(users.filter(user => user.id !== id));
+  };
 
 
+  
 
 
 
@@ -89,7 +89,8 @@ function App() {
       onChange={onChange}
       onCreate={onCreate}
       />
-      <UserList users={users}></UserList>
+      <UserList users={users} onRemove={onRemove} ></UserList>
+      <Inputs></Inputs>
     </>
   )
 
