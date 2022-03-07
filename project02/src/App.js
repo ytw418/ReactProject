@@ -20,7 +20,7 @@ function App() {
   });
 
   const {username,email} = inputs;
-  const nextId = useRef(4);
+  const nextId = useRef(4); // useRef 로 선언하면 컴포넌트가 리랜더링 되더라도 변수값이 초기화 되지 않는다 = 전역저장소에 저장되기 때문
 
   const onChange = e => {
     const {name, value} = e.target;
