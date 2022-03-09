@@ -73,7 +73,7 @@ function App() {
   const onRemove = (iddd)  => {
     // user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
     // = user.id 가 id 인 것을 제거함
-    setUsers(users.filter(user => user.id !== iddd)); // 같은 아이디가 아닌 것 만 추출(조건 같은 개념이네) 
+    setUsers(users.filter(user => user.id !== iddd)); // 같은 아이디가 아닌 것 만 추출함(조건 같은 개념이네) 
   };
 
 
