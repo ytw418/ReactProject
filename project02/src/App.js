@@ -35,17 +35,20 @@ function App() {
     {
       id: 1,
       username: 'velopert',
-      email: 'public.velopert@gmail.com'
+      email: 'public.velopert@gmail.com',
+      active:true,
     },
     {
       id: 2,
       username: 'tester',
-      email: 'tester@example.com'
+      email: 'tester@example.com',
+      active:false,
     },
     {
       id: 3,
       username: 'liz',
-      email: 'liz@example.com'
+      email: 'liz@example.com',
+      active:false,
     }
   
 ]);
@@ -75,7 +78,13 @@ function App() {
     // = user.id 가 id 인 것을 제거함
     setUsers(users.filter(user => user.id !== iddd)); // 같은 아이디가 아닌 것 만 추출함(조건 같은 개념이네) 
   };
-
+  const onToggle = id => {
+    setUsers(
+      users.map(user =>
+        user.id === id ? { ...user, active: !user.active } : user
+      )
+    );
+  };
 
   
 
@@ -89,7 +98,7 @@ function App() {
       onChange={onChange}
       onCreate={onCreate}
       />
-      <UserList users={users} onRemove={onRemove} ></UserList>
+      <UserList users={users} onRemove={onRemove} onToggle={onToggle} ></UserList>
     
     </>
   )
