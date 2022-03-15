@@ -83,14 +83,24 @@ function App() {
     setUsers(users.filter(user => user.id !== iddd)); // 같은 아이디가 아닌 것 만 추출함(조건 같은 개념이네) 
   };
 
+
+//user.active 변수를 수정하고 리턴 user 코드
   const onToggle = id => {
-    setUsers( users.map(user=>{
+    setUsers( 
+   users.map(user=>{
       user.active=(user.id===id?(!user.active):user.active);
       return user;
   })
   );
   };
-
+// ...user 로 불변성 유지코드
+  // const onToggle = id => {
+  //   setUsers(
+  //     users.map(user =>
+  //       user.id === id ? { ...user, active: !user.active } : user
+  //     )
+  //   );
+  // };
 
 
   return (
