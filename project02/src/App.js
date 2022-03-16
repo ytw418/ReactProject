@@ -1,4 +1,4 @@
-import React, { useRef,useState,useMemo} from 'react';
+import React, { useRef,useState,useMemo,useCallback} from 'react';
 import Counter from './Counter';
 import InputSample from './InputSample';
 import Inputs from './Inputs';
@@ -61,15 +61,16 @@ function App() {
 ]);
   
 
-  const onCreate = () => {
+  const onCreate = useCallback(() => {
 
     const user = {
       id: nextId.current,
       username,
       email
     };
-    
-    setUsers([...users, user]);
+    //문자열 합치기 concat()
+    setUsers(users.concat(user));
+    // setUsers([...users, user]);
     
     setInputs({
       username: '',
@@ -78,7 +79,7 @@ function App() {
     
     console.log({username});
     nextId.current += 1;
-  };
+  },[users,username,email]);
 
   const onRemove = (iddd)  => {
     // user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
