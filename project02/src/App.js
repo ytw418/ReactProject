@@ -8,7 +8,10 @@ import UserList from './UserList';
 import CreateUser from './CreateUser';
 
 
+
 //rfce
+
+
 
 
 function App() {
@@ -105,6 +108,10 @@ function App() {
     );
   };
 
+  const count = (users) => {
+    console.log('활성 사용자 수를 세는중...');
+    return users.filter(user => user.active).length;
+  }
 
   return (
     <>
@@ -115,7 +122,7 @@ function App() {
       onCreate={onCreate}
       />
       <UserList users={users} onRemove={onRemove} onToggle={onToggle} ></UserList>
-    
+      <div>활성사용자 수 : {count(users)}</div>
     </>
   )
 
