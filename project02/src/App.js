@@ -27,13 +27,12 @@ function App() {
 
   const onChange = useCallback( e => {
     const {name, value} = e.target;
-    setInputs({
+    setInputs(inputs => ({
       ...inputs,
       [name]:value  // 네임=키 (네임은 username, 또는 email 이다 )에 값은 벨류다
-    })
+    }));
   
-  },[inputs]
-  );
+  },[]);
 
   const [users,setUsers] = useState([
     
@@ -70,7 +69,7 @@ function App() {
       email
     };
     //문자열 합치기 concat()
-    setUsers(users.concat(user));
+    setUsers(users => users.concat(user));
     // setUsers([...users, user]);
     
     setInputs({
@@ -80,14 +79,14 @@ function App() {
     
     console.log({username});
     nextId.current += 1;
-  },[users,username,email]);
+  },[username,email]);
 
   const onRemove = useCallback((iddd)  => {
     // user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
     // = user.id 가 id 인 것을 제거함
-    setUsers(users.filter(user => user.id !== iddd)); // 같은 아이디가 아닌 것 만 추출함(조건 같은 개념이네) 
+    setUsers(users => users.filter(user => user.id !== iddd)); // 같은 아이디가 아닌 것 만 추출함(조건 같은 개념이네) 
   }
-  ,[users]);
+  ,[]);
 
 
 //user.active 변수를 수정하고 리턴 user 코드
@@ -106,12 +105,12 @@ function App() {
   const onToggle = useCallback(
     id => {
     
-    setUsers(
+    setUsers( users =>
       users.map(user =>
         user.id === id ? { ...user, active: !user.active } : user
       )
     );
-  },[users]);
+  },[]);
 
   const count = useMemo( () => {
     console.log('활성 사용자 수를 세는중...');
