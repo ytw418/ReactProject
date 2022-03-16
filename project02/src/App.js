@@ -1,4 +1,4 @@
-import React, { useRef,useState } from 'react';
+import React, { useRef,useState,useMemo} from 'react';
 import Counter from './Counter';
 import InputSample from './InputSample';
 import Inputs from './Inputs';
@@ -31,7 +31,7 @@ function App() {
       ...inputs,
       [name]:value  // 네임=키 (네임은 username, 또는 email 이다 )에 값은 벨류다
     })
-    console.log({username});
+  
   }
 
   const [users,setUsers] = useState([
@@ -108,10 +108,10 @@ function App() {
     );
   };
 
-  const count = (users) => {
+  const count = useMemo( () => {
     console.log('활성 사용자 수를 세는중...');
     return users.filter(user => user.active).length;
-  }
+  },[users]);
 
   return (
     <>
@@ -122,7 +122,7 @@ function App() {
       onCreate={onCreate}
       />
       <UserList users={users} onRemove={onRemove} onToggle={onToggle} ></UserList>
-      <div>활성사용자 수 : {count(users)}</div>
+      <div>활성사용자 수 : {count}</div>
     </>
   )
 
