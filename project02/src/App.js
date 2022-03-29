@@ -127,6 +127,7 @@ function App() {
       />
       <UserList users={users} onRemove={onRemove} onToggle={onToggle} ></UserList>
       <div>활성사용자 수 : {count}</div>
+      <Counter></Counter>
     </>
   )
 
