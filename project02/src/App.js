@@ -56,7 +56,12 @@ function reducer(state,action){
           ...state.inputs,
           [action.name]:action.value
         },
-      }
+      };
+      case 'CREATE_USER':
+        return {
+          inputs:initialState.inputs,
+          users:state.concat(action.user)
+        };
   }
   return state;
 }
@@ -64,6 +69,7 @@ function reducer(state,action){
 function App() {
 
   const [state,dispatch] = useReducer(reducer,initialState);
+  const nextId = useRef(4);
   const { users } = state;
   const { username, email } = state.inputs;
   
@@ -75,6 +81,19 @@ function App() {
       value
     })
   },[])
+
+  const onCreate = useCallback(() => {
+    dispatch({
+      type: 'CREATE_USER',
+      user: {
+        id: nextId.current,
+        username,
+        email
+      }
+    });
+    nextId.current += 1;
+  }, [username, email]);
+
     
   return (
     <>
