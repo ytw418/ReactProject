@@ -26,6 +26,7 @@ const CreateUser = () => {
         onChange={onChange}
         value={email}
       />
+      
       <button onClick={useCallback(() => {
     dispatch({
       type: 'CREATE_USER',
